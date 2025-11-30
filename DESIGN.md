@@ -70,8 +70,6 @@ The AI Context-Aware Study Coach is a mobile application that leverages AI to tr
        └─> API Gateway calls Ollama LLM Service
            └─> LLM generates:
                - Multiple choice questions
-               - Fill-in-the-blank questions
-               - Short answer questions
                - Summary
                - Flashcards
            └─> Returns generated content to API Gateway
