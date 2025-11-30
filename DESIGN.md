@@ -181,8 +181,6 @@ Mobile App (displays quiz)
 - Run LLM models (llama3.2:1b)
 - Generate educational content:
   - Multiple choice questions
-  - Fill-in-the-blank questions
-  - Short answer questions
   - Summaries
   - Flashcards
 
