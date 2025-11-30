@@ -197,6 +197,7 @@ tests/test_ocr_service.py::TestOCRService::test_root_endpoint PASSED
 
 ============= 29 passed, 0 failed, 0 skipped =============
 ```
+<img width="1030" height="570" alt="image" src="https://github.com/user-attachments/assets/3e63d9eb-74cf-4dd4-ae65-f7a9445c5cb2" />
 
 **Note**: Removed 8 unnecessary tests (4 skipped audio/TTS tests + 4 failed OCR direct tests) and added 2 flashcard generation tests to complete core functionality coverage. All tests now pass without requiring services to be running.
 
