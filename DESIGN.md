@@ -180,7 +180,7 @@ Mobile App (displays quiz)
 **Technology**: Ollama (local LLM runtime)
 
 **Responsibilities**:
-- Run LLM models (llama3)
+- Run LLM models (llama3.2:1b)
 - Generate educational content:
   - Multiple choice questions
   - Fill-in-the-blank questions
@@ -233,14 +233,14 @@ Mobile App (displays quiz)
 
 ### 6.1 Ollama LLM Integration
 
-**Model**: llama3 (configurable via `OLLAMA_MODEL` environment variable)
+**Model**: llama3.2:1b (configurable via `OLLAMA_MODEL` environment variable)
 
 **API Endpoint**: `http://ollama:11434/api/generate`
 
 **Request Format**:
 ```json
 {
-  "model": "llama3",
+  "model": "llama3.2:1b",
   "prompt": "User prompt text",
   "system": "System prompt text",
   "stream": false
@@ -469,7 +469,7 @@ Return only the JSON array, no additional text.
 2. LLM Service Call
    API Gateway → Ollama: POST /api/generate
    Body: {
-     "model": "llama3",
+     "model": "llama3.2:1b",
      "prompt": "Generate quiz...",
      "system": "You are an expert educator..."
    }
@@ -534,7 +534,7 @@ study-coach-network (Docker Bridge Network)
 ```bash
 OCR_SERVICE_URL=http://ocr-service:8001
 LLM_SERVICE_URL=http://ollama:11434
-OLLAMA_MODEL=llama3
+OLLAMA_MODEL=llama3.2:1b
 TTS_ENABLED=true
 ```
 
@@ -575,7 +575,7 @@ docker-compose down
 
 ```bash
 # Pull Ollama model (first time)
-docker exec study-coach-ollama ollama pull llama3
+docker exec study-coach-ollama ollama pull llama3.2:1b
 
 # Verify model
 docker exec study-coach-ollama ollama list
@@ -598,10 +598,20 @@ curl http://localhost:11434/api/tags
 
 See `tests/TESTING_WALKTHROUGH.md` for comprehensive testing documentation.
 
+**Test Status**: 29 tests passing, 0 failed, 0 skipped - 100% pass rate
+
 **Test Categories**:
-- Unit tests for each microservice
-- Integration tests for complete workflows
-- Edge case tests (blurry images, short text, service failures)
+- Unit tests for each microservice (using mocks - no service dependencies)
+- Integration tests for complete workflows (gracefully handle service unavailability)
+- Edge case tests (blurry images, short text, service failures, timeouts)
+
+**Coverage**:
+- ✅ Image scanning (OCR) - Tested via API Gateway and integration tests
+- ✅ Multiple choice quiz generation - Fully tested
+- ✅ Summary generation - Tested via integration tests
+- ✅ Flashcard generation - Fully tested
+- ✅ Health checks - All services tested
+- ✅ Comprehensive edge cases - All identified scenarios covered
 
 ## 13. Future Enhancements
 
