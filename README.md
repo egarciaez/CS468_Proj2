@@ -306,7 +306,6 @@ docker exec study-coach-ollama ollama pull llama3.2:1b
 ## Documentation
 
 - **DESIGN.md**: Complete architecture design with microservice diagrams, data flow, and AI tool mapping
-- **AI_CODE_DOCUMENTATION.md**: Detailed documentation of AI-generated code (50%+ requirement)
 - **SETUP_AND_RUN.md**: Step-by-step setup and run instructions
 - **tests/TESTING_WALKTHROUGH.md**: Comprehensive testing guide with debugging walkthroughs
 - **TESTING_REPORT.md**: Testing documentation with results
