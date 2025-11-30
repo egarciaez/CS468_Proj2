@@ -207,10 +207,8 @@ Mobile App (displays quiz)
 - **Implementation**: React Native components with tap-to-reveal functionality
 - **Features**:
   - Multiple choice questions with selectable options
-  - Fill-in-the-blank questions with revealable answers
-  - Short answer questions with key points
   - Summary text display
-  - Flashcard front/back display
+  - Flashcard display
 
 **Audio/TTS (Phone Speakers)**:
 - **Purpose**: Read questions, summaries, and flashcards aloud
@@ -275,58 +273,6 @@ Return ONLY a valid JSON array with this structure:
         "options": ["Option A", "Option B", "Option C", "Option D"],
         "correct_answer": 0,
         "explanation": "Brief explanation"
-    },
-    ...
-]
-
-Text: [extracted text]
-
-Return only the JSON array, no additional text.
-```
-
-#### Fill-in-the-Blank Questions
-
-**System Prompt**:
-```
-You are an expert educator creating fill-in-the-blank questions.
-Each question should have a clear blank space (marked with _____) and a specific correct answer.
-```
-
-**User Prompt**:
-```
-Based on the following text, generate 5-7 fill-in-the-blank questions in JSON format.
-Return ONLY a valid JSON array with this structure:
-[
-    {
-        "question": "Sentence with _____ blank",
-        "answer": "Correct answer",
-        "hint": "Optional hint"
-    },
-    ...
-]
-
-Text: [extracted text]
-
-Return only the JSON array, no additional text.
-```
-
-#### Short Answer Questions
-
-**System Prompt**:
-```
-You are an expert educator creating short answer questions.
-Questions should require thoughtful responses, not just one-word answers.
-```
-
-**User Prompt**:
-```
-Based on the following text, generate 5-7 short answer questions in JSON format.
-Return ONLY a valid JSON array with this structure:
-[
-    {
-        "question": "Question text",
-        "answer": "Expected answer",
-        "key_points": ["Point 1", "Point 2"]
     },
     ...
 ]
