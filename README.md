@@ -40,7 +40,7 @@ The AI Study Coach app allows you to:
 ## Project Structure
 
 ```
-studyCoach/
+CS468_Project2/
 ├── ocr-service/            # OCR Microservice (FastAPI)
 │   ├── main.py            # OCR service application
 │   ├── requirements.txt   # Python dependencies
@@ -320,14 +320,6 @@ docker exec study-coach-ollama ollama pull llama3.2:1b
 4. Add tests for new functionality
 5. Submit a pull request
 
-## License
-
-This project is developed for educational purposes as part of an AI-assisted development assignment.
-
-## Authors
-
-- awagne30
-- melvinczyk
 
 ## Acknowledgments
 
